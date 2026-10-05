@@ -31,6 +31,11 @@ imageInput.addEventListener('change', () => {
   const file = imageInput.files[0];
 
   if (!file) return;
+  if (!/^image\/*/.test(file.type)) {
+    console.error('El archivo no es una imágen')
+    imageDiv.innerHTML = 'El archivo no es una imágen'
+    return
+  }
 
   const imageUrl = URL.createObjectURL(file);
 
