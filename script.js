@@ -34,6 +34,7 @@ imageInput.addEventListener('change', () => {
   if (!/^image\/*/.test(file.type)) {
     console.error('El archivo no es una imágen')
     imageDiv.innerHTML = 'El archivo no es una imágen'
+    imageInput.value = ''
     return
   }
 
